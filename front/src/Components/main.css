@@ -1,0 +1,19 @@
+
+
+.FriendList {
+    overflow: hidden;
+}
+
+.test::-webkit-scrollbar {
+            width: 5px;
+        }
+        
+.test::-webkit-scrollbar-track {
+            border-radius: 8px;
+            background-color: #2b2d31;
+        }
+        
+.test::-webkit-scrollbar-thumb {
+            border-radius: 8px;
+            background-color: #1e1f22;
+        }

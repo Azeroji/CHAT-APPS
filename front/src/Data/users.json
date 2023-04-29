@@ -1,0 +1,25 @@
+[
+    {
+        "id":0,
+        "name":"Azeroji",
+        "imgUrl": "/assets/dalil.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Dalil",
+        "imgUrl": "/assets/dalil.jpg"
+
+    },
+    {
+        "id": 5,
+        "name": "John",
+        "imgUrl": "/assets/user.png"
+
+    },
+    {
+        "id": 6,
+        "name": "Mr Beast",
+        "imgUrl": "/assets/mrbeast.jpg"
+
+    }
+]
