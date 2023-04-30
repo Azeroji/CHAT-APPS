@@ -12,11 +12,10 @@ function decrypt(key){
 
 
 const pool = mysql.createPool({
-  host: 'sql7.freemysqlhosting.net',
-  user: 'sql7614785',
-  password: 'dfySvT5SKA',
-  database: 'sql7614785',
-  port: 3306
+  host: 'localhost',
+  user: 'root',
+  password: 'dalildalil33',
+  database: 'chat'
 }).promise()
 
 export async function users(id) {
@@ -83,11 +82,6 @@ export async function auth(authkey) {
         }
         const value = { success : true, result : {
             username : result[0].username,
-            first_name : result[0].first_name,
-            last_name : result[0].last_name,
-            email : result[0].email,
-            phone_number: result[0].phone_number,
-            __AUTH : result[0].is_admin
         } }
         return value
     } catch(error) {

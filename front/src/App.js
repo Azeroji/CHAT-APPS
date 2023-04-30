@@ -16,16 +16,6 @@ const App = () => {
   const [AUTHKEY, SETAUTHKEY] = React.useState(-1)
   
   let key = Cookies.get('AUTHKEY')
-  
-  if(!key){
-    Cookies.set('AUTHKEY',-1)
-  }
-
-  Cookies.set("test","test")
-
-  const miam = "meh"
-
-  Cookies.set("miam", miam)
 
 
   function SetKey(key){

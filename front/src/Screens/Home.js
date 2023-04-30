@@ -4,7 +4,7 @@ const Home = (props) => {
 
   return (
     <div>
-        { props.Key == -1 ? 
+        { !props.user_id || props.user_id == -1 ? 
           <div className='h-[100vh] bg-[#2b2d31] flex justify-center items-center '>
             <a href="/signin"><button className='bg-[lightgray] font-medium px-[20px] p-[5px]'>SignIn</button></a>
           </div>

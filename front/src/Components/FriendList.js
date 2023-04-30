@@ -8,13 +8,12 @@ import { useNavigate } from 'react-router-dom'
 export default function FriendList(props){
 
   const navigate = useNavigate()
-  if (props.user_id == -1) {
+  if (!props.user_id || props.user_id == -1) {
     navigate('/signin')
     window.location.reload(false);
   }
     const id = useParams()
 
-    const [selected, setSelected] = React.useState(id)
     const [user,setUser] = React.useState([])
     
     React.useEffect( () => {
@@ -36,6 +35,7 @@ export default function FriendList(props){
       getmsg()
     },[])
     
+
     const userList = user.map(user => {return(<Friend key={user.id} userFriend={user} />)})
 
     return(

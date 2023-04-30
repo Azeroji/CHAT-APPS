@@ -6,11 +6,6 @@ const SignUp = (props) => {
 
   const navigate = useNavigate()
 
-  if (props.Key != -1) {
-    navigate('/friends')
-    window.location.reload(false);
-  }
-
   const [msg, setMsg] = React.useState('')
 
   const [show, setShow] = React.useState(false)
@@ -90,7 +85,7 @@ const SignUp = (props) => {
   return (
     <div className='flex justify-center'>
         
-      {props.Key == -1 && <div className='mt-[7vw] lg:drop-shadow-2xl xl:h-[60vh] w-[100%] lg:w-[60vw] bg-[white] rounded-[18px] flex content-clip p-[10px]'>
+      {(!props.Key || props.Key == -1) && <div className='mt-[7vw] lg:drop-shadow-2xl xl:h-[60vh] w-[100%] lg:w-[60vw] bg-[white] rounded-[18px] flex content-clip p-[10px]'>
 
         <div className='hidden xl:flex w-[30%] p-[40px] bg-primary flex-y justify-center pt-[5%] rounded-[10px] relative '>
         <div>
@@ -103,36 +98,15 @@ const SignUp = (props) => {
         </div>
         </div>
         <div className='w-[100%] xl:w-[70%] flex items-center justify-center'>
-
           <div className='w-[100%] xl:w-[70%]'>
           <p className='font-bold text-[28px] mb-[5%] text-center'>Sign up</p>
             <form>
-<<<<<<< HEAD
             <p className='mb-[5%] text-center text-[red]'> {msg} </p>
               <p>Username</p>
               <input onChange={handleChange} placeholder="Username" className="bg-[#ededed] rounded-[4px] h-[40px] text-[14px] my-[10px] w-[100%] focus:outline-none px-[15px]" name="username" type="text" />
-              <p>Password</p>
-=======
-              <div className='flex justify-between w-[100%]'>
-                <div className='w-[45%]'>
-                  <p>First Name</p>
-                  <input onChange={handleChange} placeholder="First Name" className="bg-[#ededed] rounded-[4px] h-[40px] text-[14px] my-[10px] w-[100%] md:w-[100%] focus:outline-none px-[15px]" name="email" type="email" />
-                </div>
-                <div className='w-[45%]'>
-                  <p>Last Name</p>
-                  <input onChange={handleChange} placeholder="Last Name" className="bg-[#ededed] rounded-[4px] h-[40px] text-[14px] my-[10px] w-[100%] md:w-[100%] focus:outline-none px-[15px]" name="email" type="email" />
-                </div>
-              </div>
-              <p>Username</p>
-              <input onChange={handleChange} placeholder="Username" className="bg-[#ededed] rounded-[4px] h-[40px] text-[14px] my-[10px] w-[100%] focus:outline-none px-[15px]" name="email" type="email" />
-              <p>Email</p>
-              <input onChange={handleChange} placeholder="Email" className="bg-[#ededed] rounded-[4px] h-[40px] text-[14px] my-[10px] w-[100%] focus:outline-none px-[15px]" name="email" type="email" />
-
-
               <div className='flex justify-between w-[100%]'>
                 <div className='w-[46%]'>
                 <p>Password</p>
->>>>>>> ecc6e9161a89457780c101314e522ae7bc8b479d
               <div className='relative w-[100%]'>
                 <input onChange={handleChange} placeholder="Password" className="bg-[#ededed] rounded-[4px] h-[40px] text-[14px] my-[10px] w-[100%] focus:outline-none px-[15px]" name="password" type={show ? "text" : "password"} />
               </div>
@@ -140,26 +114,19 @@ const SignUp = (props) => {
                 <div className='w-[46%]'>
                 <p>Confirm Password</p>
               <div className='relative w-[100%]'>
-<<<<<<< HEAD
                 <input onChange={handleChange} placeholder="Confirm Password" className="bg-[#ededed] rounded-[4px] h-[40px] text-[14px] my-[10px] w-[100%] focus:outline-none px-[15px]" name="confirmpassword" type={show ? "text" : "password"} />
                 <p className='cursor-pointer text-primary absolute top-[50%] translate-y-[-50%] right-[5%] font-medium' onClick={() => {setShow(!show)}}> {show ? "hide" : "show"} </p>
-=======
-                <input onChange={handleChange} placeholder="Confirm Password" className="bg-[#ededed] rounded-[4px] h-[40px] text-[14px] my-[10px] w-[100%] focus:outline-none px-[15px]" name="password" type={show ? "text" : "password"} />
-                <p className='cursor-pointer text-primary absolute top-[50%] translate-y-[-50%] right-[-25%] font-medium' onClick={() => {setShow(!show)}}> {show ? "hide" : "show"} </p>
               </div>
                 </div>
->>>>>>> ecc6e9161a89457780c101314e522ae7bc8b479d
               </div>
             </form>
             <button onClick={Register} className='cursor-pointer my-[10px] bg-primary h-[40px] w-[100%] rounded-[6px] text-[18px] text-[white] font-medium'>Sign up</button>
             <span className='text-primary xl:hidden'>Already have an account? <a href="/signin" className='underline'>Sign in</a></span>
           </div>
-
         </div>
-          
       </div>}
       
-      {props.Key != -1 && <div>
+      {props.Key && props.Key != -1 && <div>
         <p className='text-[green] mt-[15vw] text-2xl'>Already Logged In</p>
         <p onClick={()=>{props.setKey(-1);console.log(account)}} className='cursor-pointer text-[blue] mt-[5%] text-xl text-center underline'>Disconnect</p>
       </div>}

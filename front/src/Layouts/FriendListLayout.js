@@ -7,7 +7,7 @@ export default function FriendListLayout(props){
 
   return (
     <div className="bg-[#313338] flex-1 h-[100%] flex">
-      <div className={`${ open ? "block" : "hidden" }`}>
+      <div className={`${ open ? "block" : "hidden" } md:block`}>
         <FriendList user_id = {props.user_id} setKey={(key) => { props.setKey(key) }}/>
       </div>
         <Outlet/>
